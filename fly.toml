@@ -1,0 +1,19 @@
+app = "whitedns"
+primary_region = "fra"
+
+[build]
+
+[mounts]
+  source = "whitedns_data"
+  destination = "/data"
+
+[[services]]
+  protocol = "udp"
+  internal_port = 53
+  [[services.ports]]
+    port = 53
+
+[[vm]]
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1
